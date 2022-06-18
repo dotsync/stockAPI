@@ -1,19 +1,13 @@
 import express from 'express'
-
 import { graphqlHTTP } from 'express-graphql'
 import { buildSchema } from 'graphql'
-
-import { restClient } from '@polygon.io/client-js'
 import { schema } from './src/schema/schema.js'
 
-import { helloWorldResolver, tickerResolver } from './src/resolvers/helloWorldResolver.js'
-
-const rest = restClient(process.env.API_KEY)
+import { tickerProfileResolver } from './src/resolvers/api/polygonStocks/referenceDataEndpoints/tickerResolvers.js'
 
 // The root provides a resolver function for each API endpoint
 var root = {
-  hello: helloWorldResolver,
-  tickerProfile : tickerResolver
+  tickerProfile : tickerProfileResolver
 }
 
 var app = express()
@@ -26,7 +20,6 @@ app.use(
   }),
 )
 app.listen(process.env.PORT)
-// console.log(process.env)
 console.log(
   `Running a GraphQL API server at http://localhost:${process.env.PORT}/graphql`,
 )

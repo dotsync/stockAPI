@@ -1,5 +1,5 @@
-import { tickerProfileType } from '../types/tickerProfileType.js'
-import { tickerDetailsType } from '../types/tickerDetailsType.js'
+import { tickerProfileType } from '../types/tickerTypes/tickerProfileType.js'
+import { tickerDetailsType } from '../types/tickerTypes/tickerDetailsType.js'
 import { tickerNewsType } from '../types/tickerTypes/tickerNewsType.js'
 
 const schema = `

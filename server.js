@@ -11,12 +11,11 @@ import { getTickerNewsResolver } from './src/resolvers/api/polygonStocks/referen
 const app = express()
 const corsOptions = {
   'Access-Control-Allow-Origin': 'http://localhost',
-  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  optionsSuccessStatus: 200,
 }
 
 app.use(cors(corsOptions))
 
-// The root provides a resolver function for each API endpoint
 const root = {
   tickerProfile: getTickerProfileResolver,
   tickerDetails: getTickerDetailsResolver,

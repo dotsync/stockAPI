@@ -11,4 +11,4 @@ export const tickerProfileType = `type TickerProfile {
         composite_figi: String
         share_class_figi: String
         last_updated_utc: String
-      }`
+}`

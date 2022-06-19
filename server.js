@@ -6,20 +6,21 @@ import cors from 'cors'
 
 import { getTickerProfileResolver } from './src/resolvers/api/polygonStocks/referenceDataEndpoints/getTickerProfileResolver.js'
 import { getTickerDetailsResolver } from './src/resolvers/api/polygonStocks/referenceDataEndpoints/getTickerDetailsResolver.js'
-
+import { getTickerNewsResolver } from './src/resolvers/api/polygonStocks/referenceDataEndpoints/getTickerNewsResolver.js'
 
 const app = express()
 const corsOptions = {
-  "Access-Control-Allow-Origin": 'http://localhost',
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  'Access-Control-Allow-Origin': 'http://localhost',
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
 app.use(cors(corsOptions))
 
 // The root provides a resolver function for each API endpoint
 const root = {
-  tickerProfile : getTickerProfileResolver,
-  tickerDetails : getTickerDetailsResolver
+  tickerProfile: getTickerProfileResolver,
+  tickerDetails: getTickerDetailsResolver,
+  tickerNews: getTickerNewsResolver,
 }
 
 app.use(

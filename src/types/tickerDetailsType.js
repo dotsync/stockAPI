@@ -23,4 +23,14 @@ export const tickerDetailsType = `type TickerDetails {
     total_employees: Float
     type: String
     weighted_shares_outstanding: Float
-  }`
+}
+type TickerBranding {
+    icon_url: String
+    logo_url: String
+}
+type TickerAddress {
+    address1: String
+    city: String
+    postal_code: String
+    state: String
+}`

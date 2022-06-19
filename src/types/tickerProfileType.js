@@ -1,4 +1,4 @@
-export const tickerType = `type Ticker {
+export const tickerProfileType = `type TickerProfile {
         ticker: String
         name: String
         market: String

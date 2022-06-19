@@ -1,9 +1,9 @@
-import { tickerType } from '../types/tickerType.js'
+import { tickerProfileType } from '../types/tickerProfileType.js'
 
 const schema = `
 type Query {
-  tickerProfile(tickerSymbol: String): [Ticker]
+  tickerProfile(tickerSymbol: String!): [TickerProfile]!
 }
-${tickerType}
+${tickerProfileType}
 `
 export { schema }

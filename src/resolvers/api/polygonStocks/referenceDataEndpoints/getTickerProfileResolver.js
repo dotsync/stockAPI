@@ -6,7 +6,7 @@ const reference = referenceClient(process.env.API_KEY)
 Query all ticker symbols which are supported by Polygon.io.
 This API currently includes Stocks/Equities, Crypto, and Forex.
 */
-const tickerProfileResolver = async ({ tickerSymbol }) => {
+const getTickerProfileResolver = async ({ tickerSymbol }) => {
   try {
     const tickerProfile = await reference
       .tickers({ ticker: tickerSymbol, limit: 10 })
@@ -21,4 +21,4 @@ const tickerProfileResolver = async ({ tickerSymbol }) => {
   }
 }
 
-export { tickerProfileResolver }
+export { getTickerProfileResolver }
